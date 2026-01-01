@@ -29,6 +29,16 @@ export default function Index() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const message = formData.get('message');
+    
+    const telegramMessage = `Новая заявка с сайта!\n\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`;
+    const telegramUrl = `https://t.me/+79139096821?text=${encodeURIComponent(telegramMessage)}`;
+    
+    window.open(telegramUrl, '_blank');
+    
     toast({
       title: 'Заявка отправлена!',
       description: 'Свяжусь с вами в ближайшее время',
@@ -36,10 +46,10 @@ export default function Index() {
   };
 
   const services = [
-    { icon: 'Zap', title: 'Замена электропроводки', desc: 'Полная или частичная замена проводки в квартире или доме', price: 'от 70 ₽' },
-    { icon: 'Power', title: 'Установка розеток и выключателей', desc: 'Монтаж, перенос и замена электроустановочных изделий', price: 'от 500 ₽' },
-    { icon: 'Lightbulb', title: 'Монтаж освещения', desc: 'Установка люстр, светильников, светодиодной подсветки', price: 'от 800 ₽' },
-    { icon: 'Shield', title: 'Сборка электрощитов', desc: 'Проектирование и монтаж распределительных щитов', price: 'до 2500 ₽' },
+    { icon: 'Zap', title: 'Замена электропроводки', desc: 'Полная или частичная замена проводки в квартире или доме', price: 'от 120 ₽' },
+    { icon: 'Power', title: 'Установка розеток и выключателей', desc: 'Монтаж, перенос и замена электроустановочных изделий', price: 'от 200 ₽' },
+    { icon: 'Lightbulb', title: 'Монтаж освещения', desc: 'Установка люстр, светильников, светодиодной подсветки', price: 'от 500 ₽' },
+    { icon: 'Shield', title: 'Сборка электрощитов', desc: 'Проектирование и монтаж распределительных щитов', price: 'от 2500 ₽' },
     { icon: 'Plug', title: 'Подключение электроприборов', desc: 'Подключение плит, стиральных машин, водонагревателей', price: 'от 1500 ₽' },
     { icon: 'Package', title: 'Закупка материалов', desc: 'Приобретение материалов по ценам ниже рыночных', price: 'экономия до 30%' },
   ];
@@ -51,9 +61,14 @@ export default function Index() {
   ];
 
   const reviews = [
-    { name: 'Алексей М.', text: 'Отличная работа! Заменили всю проводку за 3 дня, чисто и аккуратно', rating: 5 },
-    { name: 'Ирина С.', text: 'Профессионально собрал щиток, объяснил всю схему. Рекомендую!', rating: 5 },
-    { name: 'Дмитрий К.', text: 'Быстро установили розетки и выключатели, всё работает отлично', rating: 5 },
+    { name: 'Мария А.', text: 'Очень довольна работой! Профессиональный подход, высокое качество работ', rating: 5 },
+    { name: 'Александр П.', text: 'Быстро и качественно выполнил все электромонтажные работы', rating: 5 },
+    { name: 'Елена С.', text: 'Отличный мастер! Рекомендую всем, кто ищет надёжного электрика', rating: 5 },
+    { name: 'Дмитрий К.', text: 'Всё сделано аккуратно и в срок. Очень доволен результатом', rating: 5 },
+    { name: 'Ирина В.', text: 'Профессионал своего дела. Работой очень довольна!', rating: 5 },
+    { name: 'Сергей Н.', text: 'Отличная работа, адекватные цены. Советую!', rating: 5 },
+    { name: 'Анна Л.', text: 'Всё сделал качественно и быстро. Большое спасибо!', rating: 5 },
+    { name: 'Олег Р.', text: 'Надёжный и ответственный мастер. Рекомендую!', rating: 5 },
   ];
 
   return (
@@ -62,7 +77,7 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Icon name="Zap" className="text-primary" size={32} />
-            <span className="font-bold text-2xl">Василий Анатольевич</span>
+            <span className="font-bold text-2xl">Ашихин В.А.</span>
           </div>
           <div className="hidden md:flex gap-6">
             <a href="#hero" className="hover:text-primary transition">Главная</a>
@@ -115,7 +130,7 @@ export default function Index() {
                 <Icon name="User" size={80} className="text-white" />
               </div>
               <div className="text-left flex-1">
-                <h3 className="text-2xl font-bold mb-4">Василий Анатольевич</h3>
+                <h3 className="text-2xl font-bold mb-4">Ашихин Василий Анатольевич</h3>
                 <p className="text-lg mb-4">
                   Профессиональный электромонтаж квартир, домов и промышленных объектов под ключ. 
                   Монтаж электрических коммуникаций с закупкой материалов по ценам ниже рыночных.
@@ -301,17 +316,17 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <Icon name="Phone" size={24} />
+                  <Icon name="Send" size={24} />
                   <div>
-                    <p className="font-bold text-lg">Телефон</p>
-                    <p className="text-white/90">+7 (900) 123-45-67</p>
+                    <p className="font-bold text-lg">Telegram</p>
+                    <a href="https://t.me/+79139096821" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white underline">+7 (913) 909-68-21</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Icon name="Mail" size={24} />
                   <div>
                     <p className="font-bold text-lg">Email</p>
-                    <p className="text-white/90">info@elektromaster.ru</p>
+                    <p className="text-white/90">Ashihin1981@yandex.ru</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -340,15 +355,15 @@ export default function Index() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Label>Ваше имя</Label>
-                    <Input placeholder="Иван Иванов" required className="mt-1" />
+                    <Input name="name" placeholder="Иван Иванов" required className="mt-1" />
                   </div>
                   <div>
                     <Label>Телефон</Label>
-                    <Input type="tel" placeholder="+7 (900) 123-45-67" required className="mt-1" />
+                    <Input name="phone" type="tel" placeholder="+7 (900) 123-45-67" required className="mt-1" />
                   </div>
                   <div>
                     <Label>Сообщение</Label>
-                    <Textarea placeholder="Опишите вашу задачу..." rows={4} required className="mt-1" />
+                    <Textarea name="message" placeholder="Опишите вашу задачу..." rows={4} required className="mt-1" />
                   </div>
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg">
                     <Icon name="Send" size={20} className="mr-2" />
@@ -365,7 +380,7 @@ export default function Index() {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Icon name="Zap" className="text-secondary" size={28} />
-            <span className="font-bold text-xl">Василий Анатольевич</span>
+            <span className="font-bold text-xl">Ашихин Василий Анатольевич</span>
           </div>
           <p className="text-gray-400">© 2024 Все права защищены</p>
           <p className="text-sm text-gray-500 mt-2">Электромонтажные работы в Новосибирске</p>
