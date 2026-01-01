@@ -93,9 +93,14 @@ export default function Index() {
               <Icon name="Calculator" size={20} className="mr-2" />
               Рассчитать стоимость
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 hover:bg-white/20 border-white text-white">
-              <Icon name="MessageCircle" size={20} className="mr-2" />
-              Написать в WhatsApp
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 bg-white/10 hover:bg-white/20 border-white text-white"
+              onClick={() => window.open('https://t.me/+79139096821', '_blank')}
+            >
+              <Icon name="Send" size={20} className="mr-2" />
+              Написать в Telegram
             </Button>
           </div>
         </div>
