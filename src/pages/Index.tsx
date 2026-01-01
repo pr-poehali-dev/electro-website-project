@@ -135,12 +135,20 @@ export default function Index() {
                   Профессиональный электромонтаж квартир, домов и промышленных объектов под ключ. 
                   Монтаж электрических коммуникаций с закупкой материалов по ценам ниже рыночных.
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   <Badge className="bg-primary">Новосибирск</Badge>
                   <Badge className="bg-secondary text-foreground">Рейтинг 5.0</Badge>
                   <Badge className="bg-primary">8 отзывов</Badge>
                   <Badge className="bg-secondary text-foreground">Под ключ</Badge>
                 </div>
+                <Button 
+                  variant="outline" 
+                  className="border-primary text-primary hover:bg-primary hover:text-white"
+                  onClick={() => window.open('https://uslugi.yandex.ru/profile/VasilijAnatolevichA-2643102', '_blank')}
+                >
+                  <Icon name="ExternalLink" size={18} className="mr-2" />
+                  Смотреть профиль на Яндекс Услугах
+                </Button>
               </div>
             </div>
           </div>
