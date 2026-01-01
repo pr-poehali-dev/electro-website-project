@@ -36,12 +36,12 @@ export default function Index() {
   };
 
   const services = [
-    { icon: 'Zap', title: 'Замена электропроводки', desc: 'Полная или частичная замена проводки в квартире или доме', price: 'от 3000 ₽/точка' },
+    { icon: 'Zap', title: 'Замена электропроводки', desc: 'Полная или частичная замена проводки в квартире или доме', price: 'от 70 ₽' },
     { icon: 'Power', title: 'Установка розеток и выключателей', desc: 'Монтаж, перенос и замена электроустановочных изделий', price: 'от 500 ₽' },
     { icon: 'Lightbulb', title: 'Монтаж освещения', desc: 'Установка люстр, светильников, светодиодной подсветки', price: 'от 800 ₽' },
-    { icon: 'Shield', title: 'Сборка электрощитов', desc: 'Проектирование и монтаж распределительных щитов', price: 'от 5000 ₽' },
+    { icon: 'Shield', title: 'Сборка электрощитов', desc: 'Проектирование и монтаж распределительных щитов', price: 'до 2500 ₽' },
     { icon: 'Plug', title: 'Подключение электроприборов', desc: 'Подключение плит, стиральных машин, водонагревателей', price: 'от 1500 ₽' },
-    { icon: 'AlertTriangle', title: 'Электромонтаж под ключ', desc: 'Комплексные работы по электрике для новостроек', price: 'договорная' },
+    { icon: 'Package', title: 'Закупка материалов', desc: 'Приобретение материалов по ценам ниже рыночных', price: 'экономия до 30%' },
   ];
 
   const portfolio = [
@@ -62,7 +62,7 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Icon name="Zap" className="text-primary" size={32} />
-            <span className="font-bold text-2xl">ЭлектроМастер</span>
+            <span className="font-bold text-2xl">Василий Анатольевич</span>
           </div>
           <div className="hidden md:flex gap-6">
             <a href="#hero" className="hover:text-primary transition">Главная</a>
@@ -83,10 +83,10 @@ export default function Index() {
       <section id="hero" className="py-20 bg-gradient-to-r from-primary to-red-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 animate-fade-in">
-            Электромонтажные работы <br />любой сложности
+            Электромонтаж квартир, домов <br />и промышленных объектов
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-95">
-            Качественно. Быстро. С гарантией 3 года.
+            Новосибирск • Рейтинг 5.0 • 8 отзывов
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" className="bg-secondary text-foreground hover:bg-secondary/90 text-lg px-8">
@@ -110,16 +110,16 @@ export default function Index() {
                 <Icon name="User" size={80} className="text-white" />
               </div>
               <div className="text-left flex-1">
-                <h3 className="text-2xl font-bold mb-4">Опыт работы более 12 лет</h3>
+                <h3 className="text-2xl font-bold mb-4">Василий Анатольевич</h3>
                 <p className="text-lg mb-4">
-                  Специализируюсь на электромонтажных работах любой сложности. 
-                  Имею 4-ю группу допуска по электробезопасности.
+                  Профессиональный электромонтаж квартир, домов и промышленных объектов под ключ. 
+                  Монтаж электрических коммуникаций с закупкой материалов по ценам ниже рыночных.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-primary">12+ лет опыта</Badge>
-                  <Badge className="bg-secondary text-foreground">500+ объектов</Badge>
-                  <Badge className="bg-primary">Гарантия 3 года</Badge>
-                  <Badge className="bg-secondary text-foreground">Сертификаты</Badge>
+                  <Badge className="bg-primary">Новосибирск</Badge>
+                  <Badge className="bg-secondary text-foreground">Рейтинг 5.0</Badge>
+                  <Badge className="bg-primary">8 отзывов</Badge>
+                  <Badge className="bg-secondary text-foreground">Под ключ</Badge>
                 </div>
               </div>
             </div>
@@ -313,7 +313,7 @@ export default function Index() {
                   <Icon name="MapPin" size={24} />
                   <div>
                     <p className="font-bold text-lg">Район работы</p>
-                    <p className="text-white/90">Москва и МО</p>
+                    <p className="text-white/90">Новосибирск</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -360,10 +360,10 @@ export default function Index() {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Icon name="Zap" className="text-secondary" size={28} />
-            <span className="font-bold text-xl">ЭлектроМастер</span>
+            <span className="font-bold text-xl">Василий Анатольевич</span>
           </div>
           <p className="text-gray-400">© 2024 Все права защищены</p>
-          <p className="text-sm text-gray-500 mt-2">ИП Иванов И.И. | ИНН 123456789012</p>
+          <p className="text-sm text-gray-500 mt-2">Электромонтажные работы в Новосибирске</p>
         </div>
       </footer>
     </div>
